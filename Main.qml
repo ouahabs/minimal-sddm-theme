@@ -41,9 +41,10 @@ Rectangle {
             height: 250
             color: "transparent"
             anchors.centerIn: parent
-            anchors.verticalCenterOffset: height / 2
+            anchors.verticalCenterOffset: (height / 2) - 50
 
             Rectangle {
+
                 id: entries
                 width: parent.width
                 height: 200
@@ -53,16 +54,18 @@ Rectangle {
                 Column {
                     anchors.centerIn: parent
                     spacing: 20
+
      
                     Row {
                         TextBox {
                             id: user_entry
-                            radius: 3
-                            width: 250
+                            radius: 0
+                            width: 300
                             anchors.verticalCenter: parent.verticalCenter
                             text: userModel.lastUser
                             font.pixelSize: 16
-                            color: Qt.rgba(0, 0, 0, 0.2)
+                            font.family: "FiraCode"
+                            color: Qt.rgba(41, 42, 45, 0.2)
                             borderColor: "transparent"
                             focusColor: Qt.rgba(0, 0, 0, 0.25)
                             hoverColor: Qt.rgba(0, 0, 0, 0.2)
@@ -74,11 +77,12 @@ Rectangle {
                     Row {
                         PasswordBox {
                             id: pw_entry
-                            radius: 3
-                            width: 250
+                            radius: 0
+                            width: 300
                             anchors.verticalCenter: parent.verticalCenter
+                            font.family: "FiraCode"
                             font.pixelSize: 15
-                            color: Qt.rgba(0, 0, 0, 0.2)
+                            color: Qt.rgba(41, 42, 45, 0.2)
                             borderColor: "transparent"
                             focusColor: Qt.rgba(0, 0, 0, 0.25)
                             hoverColor: Qt.rgba(0, 0, 0, 0.2)
@@ -100,12 +104,13 @@ Rectangle {
                         
                         Button {
                             id: loginButton
-                            radius: 3
+                            radius: 0
                             text: textConstants.login
                             width: 250
-                            color: Qt.rgba(0, 0, 0, 0.2)
-                            activeColor: Qt.rgba(0, 0, 0, 0.2)
-                            pressedColor: Qt.rgba(0, 0, 0, 0.25)
+                            color: Qt.rgba(41, 42, 45, 0.2)
+                            activeColor: Qt.rgba(41, 42, 45, 0.2)
+                            pressedColor: Qt.rgba(41, 42, 45, 0.2)
+                            font.family: "FiraCode"
                             font.pixelSize: 15
                             font.bold: false
                             onClicked: sddm.login(user_entry.text, pw_entry.text, session.index)
@@ -133,14 +138,15 @@ Rectangle {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             width: 160
-            color: Qt.rgba(0, 0, 0, 0.2)
-            dropDownColor: Qt.rgba(0, 0, 0, 0.2)
+            color: Qt.rgba(41, 42, 45, 0.2)
+            dropDownColor: Qt.rgba(41, 42, 45, 0.2)
             borderColor: "transparent"
             textColor: "white"
             arrowIcon: "images/arrow-down.png"
             arrowColor: "transparent"
             model: sessionModel
             index: sessionModel.lastIndex
+            font.family: "FiraCode"
             font.pixelSize: 13
             KeyNavigation.backtab: shutdown; KeyNavigation.tab: user_entry
         }
@@ -151,12 +157,13 @@ Rectangle {
             anchors.right: shutdown.left
             anchors.rightMargin: 10
             text: textConstants.reboot
-            color: Qt.rgba(0, 0, 0, 0.2)
-            pressedColor: Qt.rgba(0, 0, 0, 0.25)
-            activeColor: Qt.rgba(0, 0, 0, 0.2)
+            color: Qt.rgba(41, 42, 45, 0.2)
+            pressedColor: Qt.rgba(41, 42, 45, 0.2)
+            activeColor: Qt.rgba(41, 42, 45, 0.2)
+            font.family: "FiraCode"
             font.pixelSize: 13
             font.bold: false
-            radius: 3
+            radius: 0
             onClicked: sddm.reboot()
             KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
         }
@@ -166,12 +173,13 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             text: textConstants.shutdown
-            color: Qt.rgba(0, 0, 0, 0.2)
-            pressedColor: Qt.rgba(0, 0, 0, 0.25)
-            activeColor: Qt.rgba(0, 0, 0, 0.2)
+            color: Qt.rgba(41, 42, 45, 0.2)
+            pressedColor: Qt.rgba(41, 42, 45, 0.2)
+            activeColor: Qt.rgba(41, 42, 45, 0.2)
+            font.family: "FiraCode"
             font.pixelSize: 13
             font.bold: false
-            radius: 3
+            radius: 0
             onClicked: sddm.powerOff()
             KeyNavigation.backtab: restart; KeyNavigation.tab: session
         }
